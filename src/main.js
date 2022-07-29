@@ -11,6 +11,9 @@ import 'video.js/dist/video-js.css'
 
 import VideoPlayer from 'vue-video-player'
 import hls from 'videojs-contrib-hls'
+import * as echarts from 'echarts';
+Vue.prototype.$echarts = echarts;
+
 
 Vue.use(hls)
 Vue.use(VideoPlayer);

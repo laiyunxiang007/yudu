@@ -9,7 +9,7 @@
           :interval="5000"
           arrow="always"
           loop
-          style="width:400px"
+          style="width:390px"
           height="200px"
           trigger="click"
       >
@@ -31,12 +31,13 @@ export default {
   data() {
     return {
       move: [{
-        name: '庄口水务',
-        url: "http://202.101.229.125:83/openUrl/YOAG5Ik/live.m3u8"
-      }, {
-        name: '庄口水务1',
-        url: "http://202.101.229.125:83/openUrl/YOAG5Ik/live.m3u8"
+        name: '黄麟乡水厂',
+        url: "http://202.101.229.125:83/openUrl/TfP4E80/live.m3u8"
       }
+      // , {
+      //   name: '庄口水务1',
+      //   url: "http://202.101.229.125:83/openUrl/YOAG5Ik/live.m3u8"
+      // }
 
       ],
     }
@@ -90,4 +91,6 @@ h4{
   color: #fff;
   font-weight:normal;
 }
+
+
 </style>

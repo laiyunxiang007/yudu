@@ -5,5 +5,11 @@ module.exports = defineConfig({
   assetsDir:'static',
   indexPath:'index.html',
   lintOnSave:false,
-  productionSourceMap:false
+  productionSourceMap:false,
+  chainWebpack: config => {
+    config.plugin('html').tap(args => {
+      args[0].title='会场水务平台'
+      return args
+    })
+  }
 })
