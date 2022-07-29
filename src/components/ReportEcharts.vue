@@ -41,6 +41,7 @@ export default {
   methods: {
     async initData() {
       const res = await this.$http.get("/api/huichang/getHistogram")
+      console.log(res.data.data)
       this.HistogramData = res.data.data
       this.initCharts()
     },
@@ -83,6 +84,7 @@ export default {
           axisLabel: {
             color: '#fff'
           },
+          max:1
         },
         dataZoom: [
           {
