@@ -70,6 +70,10 @@
             prop="wd"
             label="温度">
         </el-table-column>
+        <el-table-column
+            prop="yali"
+            label="压力">
+        </el-table-column>
       </el-table>
     </div>
   </div>
@@ -86,7 +90,7 @@ export default {
     return {
       tableData: [],
       options: ["高兰", "晓龙", "田尾",
-        "高排", "石灰坝", "右水", "黄冠", "杉坑", "上芦", "芳园", "莲塘", "南杞坑"],
+        "高排", "石灰坝", "右水", "黄冠", "杉坑",  "芳园", "莲塘", "南杞坑"],
       form: {
         optionsValue: '',
         detailDate: ''

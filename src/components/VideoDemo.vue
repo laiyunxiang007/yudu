@@ -1,25 +1,18 @@
 <template>
-  <div class="hkVideo">
-    <div class="player">
-      <div class="title">
-        <span class="title-font">各水厂视频</span>
-        <dv-decoration-1 style="width:150px;height:20px;"/>
-      </div>
+  <dv-border-box-11  title="视频监控">
       <el-carousel
           :interval="5000"
           arrow="always"
           loop
-          style="width:390px"
-          height="200px"
+          height="100%"
           trigger="click"
       >
         <el-carousel-item v-for="(item,index) in move" :key='index'>
           <h4>{{item.name}}</h4>
-          <video class="video" autoplay controls style="width:100%;height:190px"></video>
+          <video class="video" autoplay controls style="width:100%;height:100%"></video>
         </el-carousel-item>
       </el-carousel>
-    </div>
-  </div>
+  </dv-border-box-11>
 </template>
 
 <script>
@@ -31,14 +24,9 @@ export default {
   data() {
     return {
       move: [{
-        name: '黄麟乡水厂',
-        url: "http://202.101.229.125:83/openUrl/TfP4E80/live.m3u8"
+        name: '高兰',
+        url: "http://202.101.229.125:83/openUrl/HC1upJm/live.m3u8"
       }
-      // , {
-      //   name: '庄口水务1',
-      //   url: "http://202.101.229.125:83/openUrl/YOAG5Ik/live.m3u8"
-      // }
-
       ],
     }
   },
@@ -67,30 +55,28 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.hkVideo {
-  position: relative;
-  padding: 10px 10px;
-}
 
-.title {
-  display: flex;
+/deep/ .el-carousel{
+  top:60px;
+  left: 20px;
+  width: 93%;
+  margin-right: 20px;
+  height: 75%;
 }
-
 /deep/ .el-carousel__button {
   display: none
 }
-
+/deep/ .el-carousel__container{
+  height: 100%;
+}
 /deep/ .el-carousel__arrow--left {
-  top: 100px;
+  top: 125px;
 }
 
 /deep/ .el-carousel__arrow--right {
-  top: 100px;
+  top: 125px;
 }
 h4{
-  color: #fff;
-  font-weight:normal;
+  color: white;
 }
-
-
 </style>

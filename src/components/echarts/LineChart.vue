@@ -1,12 +1,6 @@
 <template>
-<div style="width: 100%;height: 100%">
-  <dv-border-box-10>
-  <div><span style="color: #fff;font-size: 20px;padding-bottom: 0">各水厂对比详情</span></div>
-  <div style="width:95%;height:90%;" ref="chart"></div>
-  </dv-border-box-10>
-</div>
+    <div id="myChart1" style="width:97%;height:83%; padding-top: 9%" ref="chart" />
 </template>
-
 <script>
 export default {
   name: "LineChart",
@@ -18,7 +12,6 @@ export default {
       lineData: {},
     }
   },
-
   methods:{
     async initData() {
       const res = await this.$http.get('/api/huichang/getLineEcharts')
@@ -34,13 +27,16 @@ export default {
         },
         legend: {
           data: ['浊度', '余氯','PH','温度','压力'],
+          top:'3%',
+          bottom:'0',
           textStyle:{
-            color:'#fff'
+            color:'#fff',
+            fontSize: '16px'
           }
         },
         grid: {
           left: '3%',
-          right: '4%',
+          right: '3%',
           bottom: '3%',
           containLabel: true
         },
@@ -50,14 +46,13 @@ export default {
           axisLabel:{
             interval:0,
             color:'#fff',
-            fontSize: 14
           },
           data:  this.lineData.mc
         },
         yAxis: {
           type: 'value',
           axisLabel:{
-            color:'#fff'
+            color:'#B4B4B4'
           },
         },
         series: [
@@ -86,13 +81,20 @@ export default {
             type: 'line',
             data: this.lineData.yali
           },
-        ]
+        ],
+        // color:['#37a2da','#e062ae', '#e690d1', '#9fe6b8', '#ffdb5c']
+      })
+      // 使用刚指定的配置项和数据显示图表。
+      window.addEventListener("resize", () => {
+        if(myChart){
+          myChart.resize()
+        }
       })
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
 </style>

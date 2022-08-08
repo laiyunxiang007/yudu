@@ -8,8 +8,8 @@ module.exports = defineConfig({
   productionSourceMap:false,
   chainWebpack: config => {
     config.plugin('html').tap(args => {
-      args[0].title='会场水务平台'
+      args[0].title='会昌水务平台'
       return args
-    })
-  }
+    });
+  },
 })

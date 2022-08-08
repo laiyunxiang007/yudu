@@ -32,14 +32,6 @@
               <LeftSide @rowData="getRowData"/>
             </dv-border-box-10>
           </div>
-<!--          <div class="btnView">-->
-<!--            <el-button type="primary" size="medium" @click="changeStatus(1)">隐藏</el-button>-->
-<!--            <el-button type="primary" size="medium" @click="changeStatus(2)">所有</el-button>-->
-<!--            <el-button type="primary" size="medium" @click="changeStatus(3)">浊度</el-button>-->
-<!--            <el-button type="primary" size="medium" @click="changeStatus(4)">余氯</el-button>-->
-<!--            <el-button type="primary" size="medium" @click="changeStatus(5)">ph</el-button>-->
-<!--            <el-button type="primary" size="medium" @click="changeStatus(6)">压力</el-button>-->
-<!--          </div>-->
           <div class="leftView_2">
             <dv-border-box-10 >
               <RightSide />
@@ -65,8 +57,8 @@
 
 <script>
 import CenterSide from "@/components/CenterSide";
-import LeftSide from "@/components/LeftSide";
-import RightSide from "@/components/RightSide";
+import LeftSide from "@/components/RightSide_1";
+import RightSide from "@/components/VideoDemo";
 import ReportEcharts from "@/components/ReportEcharts";
 import LineChart from "@/components/echarts/LineChart";
 

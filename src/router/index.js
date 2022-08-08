@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/HomeView_2.vue'
 import WaterWorksDetail from "@/components/WaterWorksDetail";
 
 Vue.use(VueRouter)
@@ -15,7 +15,7 @@ const routes = [
     path: '/waterWorksDetail',
     name: 'waterWorksDetail',
     component: WaterWorksDetail
-  },
+  }
 ]
 
 const router = new VueRouter({
