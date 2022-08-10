@@ -12,4 +12,7 @@ module.exports = defineConfig({
       return args
     });
   },
+  devServer:{
+    port:8089
+  }
 })

@@ -179,7 +179,7 @@ export default {
 }
 
 /deep/ .el-menu.el-menu--horizontal {
-  border-bottom: solid 0px #e6e6e6;
+  border-bottom: solid 0 #e6e6e6;
 }
 
 </style>

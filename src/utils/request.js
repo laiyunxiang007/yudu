@@ -18,7 +18,7 @@ function endLoading() {    //使用Element loading-close 方法
 axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
 //创建axios的配置对象
 const http = axios.create({
-  baseURL: 'http://localhost:9801/',
+  baseURL: 'http://116.63.194.30:9801/',
   timeout: 100000,
 })
 
