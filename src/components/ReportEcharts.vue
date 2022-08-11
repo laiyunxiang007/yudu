@@ -80,7 +80,7 @@ export default {
             grid: {
               left: '3%',
               right: '6%',
-              bottom: '3%',
+              bottom: '5%',
               containLabel: true
             },
             xAxis: {
@@ -131,7 +131,7 @@ export default {
               {
                 name: "实时流量",
                 type: "bar",
-                barWidth: 10,
+                barWidth: 20,
                 itemStyle: {
                   normal: {
                     barBorderRadius: 5,

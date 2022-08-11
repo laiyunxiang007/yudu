@@ -19,8 +19,8 @@
         </div>
         <dv-decoration-10 class="dv-dec-10-s d-flex"/>
         <div style="display: flex;position: fixed;left: 20px;top:30px">
-          <img src="../assets/logo.png" style="height: 40px;width: 80px;">
-          <span style="color: white;font-size: 20px;padding-top: 7px">0797-8192448</span>
+          <img src="../assets/logo.png" style="height: 30px;width: 50px;">
+          <span style="color: white;font-size: 16px;padding-top: 7px">0797-8192448</span>
         </div>
       </el-header>
       <el-container>
@@ -145,6 +145,7 @@ export default {
           colors.push(colorsItem[0])
         }
       })
+      console.log(res.data.data)
       let newConfig = {
         colors: colors,
         unit: 'Mpa',

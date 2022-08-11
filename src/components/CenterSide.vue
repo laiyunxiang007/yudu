@@ -234,7 +234,6 @@ export default {
           title:waterwork.name
         });
         map.addOverlay(marker);
-        console.log("waterwork",waterwork)
         // 创建图文信息窗口
         var sContent = `<div style="text-align: center;color: white">
                          <table style="width: 100%;">

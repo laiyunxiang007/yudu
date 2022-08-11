@@ -28,7 +28,7 @@ export default {
         legend: {
           data: ['浊度', '余氯','PH','温度','压力'],
           top:'3%',
-          bottom:'0',
+          bottom:'2%',
           textStyle:{
             color:'#fff',
             fontSize: '16px'
@@ -37,7 +37,7 @@ export default {
         grid: {
           left: '3%',
           right: '3%',
-          bottom: '3%',
+          bottom: '5%',
           containLabel: true
         },
         xAxis: {
@@ -54,6 +54,9 @@ export default {
           axisLabel:{
             color:'#B4B4B4'
           },
+          splitLine: {
+            show: false
+          }
         },
         series: [
           {
