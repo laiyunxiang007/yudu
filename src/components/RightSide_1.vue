@@ -5,59 +5,59 @@
       <el-button style="margin-left: 50px;height: 30px" type="text" size="mini" @click="waterWorksDetail">数据报表
       </el-button>
     </div>
-      <el-table
-          :data="tableData"
-          size="mini">
-        <el-table-column
-            prop="mc"
-            label="名称" width="45px">
-        </el-table-column>
-        <el-table-column
-            prop="sj"
-            label="时间" width="65px">
-        </el-table-column>
-        <el-table-column
-            prop="zd"
-            label="浊度" width="55px">
-          <template v-slot="scope">
-            <div :style="{'color':scope.row.zd>3? 'red':''}">
-              {{ scope.row.zd }}
-            </div>
-          </template>
-        </el-table-column>
-        <el-table-column
-            prop="ph"
-            label="ph" width="60px">
-        </el-table-column>
-        <el-table-column
-            prop="yl"
-            label="余氯" width="55px">
-          <template v-slot="scope">
-            <div :style="{'color':(scope.row.yl>0.8||scope.row.yl<0.1)? 'red':''}">
-              {{ scope.row.yl }}
-            </div>
-          </template>
-        </el-table-column>
-        <el-table-column
-            prop="wd"
-            label="温度" width="55px">
-          <template v-slot="scope">
-            <div :style="{'color':scope.row.wd==='0'? 'red':''}">
-              {{ scope.row.wd }}
-            </div>
-          </template>
-        </el-table-column>
-        <el-table-column
-            prop="yali"
-            label="压力"  width="55px">
-          <template v-slot="scope">
-            <div >
-              {{ scope.row.yali==='0'?'0.38':scope.row.yali }}
-            </div>
-          </template>
-        </el-table-column>
-      </el-table>
-    </div>
+    <el-table
+        :data="tableData"
+        size="mini">
+      <el-table-column
+          prop="mc"
+          label="名称" width="45px">
+      </el-table-column>
+      <el-table-column
+          prop="sj"
+          label="时间" width="65px">
+      </el-table-column>
+      <el-table-column
+          prop="zd"
+          label="浊度" width="55px">
+        <template v-slot="scope">
+          <div :style="{'color':scope.row.zd>3? 'red':''}">
+            {{ scope.row.zd }}
+          </div>
+        </template>
+      </el-table-column>
+      <el-table-column
+          prop="ph"
+          label="ph" width="60px">
+      </el-table-column>
+      <el-table-column
+          prop="yl"
+          label="余氯" width="55px">
+        <template v-slot="scope">
+          <div>
+            {{ scope.row.yl  }}
+          </div>
+        </template>
+      </el-table-column>
+      <el-table-column
+          prop="wd"
+          label="温度" width="55px">
+        <template v-slot="scope">
+          <div>
+            {{ scope.row.wd }}
+          </div>
+        </template>
+      </el-table-column>
+      <el-table-column
+          prop="yali"
+          label="压力" width="55px">
+        <template v-slot="scope">
+          <div>
+            {{ scope.row.yali === '0' ? '0.38' : scope.row.yali }}
+          </div>
+        </template>
+      </el-table-column>
+    </el-table>
+  </div>
 </template>
 
 <script>
@@ -83,6 +83,16 @@ export default {
       const new1 = this.$router.resolve({path: '/waterWorksDetail'});
       window.open(new1.href, '_blank')
     },
+    roudDom() {
+      var num = Math.random()
+      if (num <= 0.2) {
+        num += 0.4
+        num = num.toFixed(2);
+        return num;
+      } else {
+        return num = num.toFixed(2);
+      }
+    }
   }
 }
 </script>
@@ -94,6 +104,7 @@ export default {
   height: 25px;
   justify-content: center;
   align-items: center;
+
   span {
     font-size: 15px;
     color: white;
@@ -151,10 +162,12 @@ export default {
 .leftSide /deep/ .el-table::before {
   height: 0;
 }
-/deep/ .cell{
+
+/deep/ .cell {
   text-align: center !important;
 }
-/deep/ .el-table .cell{
+
+/deep/ .el-table .cell {
   padding-left: 0;
   padding-right: 0;
 }

@@ -25,7 +25,7 @@ export default {
     return {
       move: [{
         name: '高兰',
-        url: "http://202.101.229.125:83/openUrl/XV0xKjm/live.m3u8"
+        url: "http://202.101.229.125:83/openUrl/BPWIqXK/live.m3u8"
       }
       ],
     }
