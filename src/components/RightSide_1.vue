@@ -34,7 +34,7 @@
           label="余氯" width="55px">
         <template v-slot="scope">
           <div>
-            {{ scope.row.yl  }}
+            {{ scope.row.yl }}
           </div>
         </template>
       </el-table-column>
@@ -61,6 +61,8 @@
 </template>
 
 <script>
+import {createWebSocket} from "@/utils/webSocket"
+const  wsuri ="ws://192.168.0.200:9801/websocket/2";
 export default {
   name: "LeftSide",
   data() {
@@ -68,11 +70,10 @@ export default {
       tableData: [],
     }
   },
+
   mounted() {
     this.initData();
-    setInterval(() => {
-      this.initData()
-    }, 20000);
+    // this.initWebSocket()
   },
   methods: {
     async initData() {
@@ -83,15 +84,40 @@ export default {
       const new1 = this.$router.resolve({path: '/waterWorksDetail'});
       window.open(new1.href, '_blank')
     },
-    roudDom() {
-      var num = Math.random()
-      if (num <= 0.2) {
-        num += 0.4
-        num = num.toFixed(2);
-        return num;
-      } else {
-        return num = num.toFixed(2);
-      }
+    global_callback(msg) {
+      console.log("websocket的回调函数收到服务器信息2：" + JSON.stringify(msg));
+      this.tableData=JSON.parse(JSON.stringify(msg));
+    },
+    initWebSocket() { // 建立连接
+      var url = "ws://192.168.0.200:9801/websocket/2";
+      this.websock = new WebSocket(url);
+      this.websock.onopen = this.websocketonopen;
+      this.websock.send = this.websocketsend;
+      this.websock.onerror = this.websocketonerror;
+      this.websock.onmessage = this.websocketonmessage;
+      this.websock.onclose = this.websocketclose;
+    },
+    // 连接成功后调用
+    websocketonopen() {
+      console.log("WebSocket连接成功");
+    },
+    // 发生错误时调用
+    websocketonerror(e) {
+      console.log("WebSocket连接发生错误");
+    },
+   // 给后端发消息时调用
+    websocketsend(e) {
+      console.log("WebSocket连接发生错误");
+    },
+   // 接收后端消息
+  // vue 客户端根据返回的cmd类型处理不同的业务响应
+    websocketonmessage(e) {
+      this.tableData = JSON.parse(e.data);
+      console.log(this.tableData)
+    },
+   // 关闭连接时调用
+    websocketclose(e) {
+      console.log("connection closed (" + e.code + ")");
     }
   }
 }
